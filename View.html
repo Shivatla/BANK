@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>User Details</h1>
+    </header>
+
+    <main>
+        <h2>Welcome, <span id="username"></span>!</h2>
+        <p>Here are your details:</p>
+        <table>
+            <tr>
+                <th>Account Number</th>
+                <th>User Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Adhar Number</th>
+                <th>Date of Birth</th>
+                <th>Account Type</th>
+                <th>Balance</th>
+            </tr>
+            <tr>
+                <td><span id="accountNumber"></span></td>
+                <td><span id="userName"></span></td>
+                <td><span id="firstName"></span></td>
+                <td><span id="lastName"></span></td>
+                <td><span id="adharNumber"></span></td>
+                <td><span id="dateOfBirth"></span></td>
+                <td><span id="accountType"></span></td>
+                <td><span id="balance"></span></td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        &copy; 2024 Your Bank. All rights reserved.
+    </footer>
+
+    <script>
+        // Fetch user details from the session and update the HTML
+        const loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+        document.getElementById("username").innerText = loggedInUser.userName;
+        document.getElementById("accountNumber").innerText = loggedInUser.accountNumber;
+        document.getElementById("userName").innerText = loggedInUser.userName;
+        document.getElementById("firstName").innerText = loggedInUser.firstName;
+        document.getElementById("lastName").innerText = loggedInUser.lastName;
+        document.getElementById("adharNumber").innerText = loggedInUser.adharNumber;
+        document.getElementById("dateOfBirth").innerText = loggedInUser.dateOfBirth;
+        document.getElementById("accountType").innerText = loggedInUser.accountType;
+        document.getElementById("balance").innerText = loggedInUser.balance;
+    </script>
+</body>
+
+</html>
